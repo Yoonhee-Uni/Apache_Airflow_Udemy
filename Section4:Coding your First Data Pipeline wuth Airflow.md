@@ -1,6 +1,6 @@
 # 24. The Project
 
-- ![img_14.png](img_14.png)
+- ![img_14.png](img/img_14.png)
 - 1. create a table with the Postgres
 - 2.  see how to check if an API is available or not
 - 3.  discover special kind of operators that helps you to wait for something to happen before moving to the next task.
@@ -9,11 +9,11 @@
 
 # 26. What is a DAG?
 
-- ![img_15.png](img_15.png)
+- ![img_15.png](img/img_15.png)
 
 # 27. DAG Skeleton
 
-- ![img_16.png](img_16.png)
+- ![img_16.png](img/img_16.png)
 
 ```
 from airflow import DAG
@@ -26,8 +26,8 @@ with DAG('user_processing', start_date=datetime(2023, 1, 1),
 
 # 28. What is an Operator?
 
-- ![img_18.png](img_18.png)
-- ![img_17.png](img_17.png)
+- ![img_18.png](img/img_18.png)
+- ![img_17.png](img/img_17.png)
 - 3 types of operator
   - Action Operators : **Execute** an action
     - An action operator executes a function basically like the python operator, to execute a python function.
@@ -38,19 +38,19 @@ with DAG('user_processing', start_date=datetime(2023, 1, 1),
 
 # 29. Providers
 
-- ![img_19.png](img_19.png)
+- ![img_19.png](img/img_19.png)
 - by installing those providers, you add new functionalities and interactions from your data pipelines.
 
 # 30. Create a Table
 
-- ![img_20.png](img_20.png)
+- ![img_20.png](img/img_20.png)
 - I prefer to keep the same name for both the variable name and the task ID.
   The task ID here is the unique identifier of your task. You always have to define a task ID and it must be unique across all of the tasks that you have in the same DAG.
 - If not exists users if not exist is very important here. Because if you don't use it and run the task twice, you are going to end up with an error saying that this table already exists.
 
 # 31. Create a connection
 
-- ![img_21.png](img_21.png)
+- ![img_21.png](img/img_21.png)
 - Make connection with postgres
 
 # 32. The secret weapon!
@@ -96,7 +96,7 @@ exit : exit
 - Sensor : files to land at a specific location or entries in a circle table.
 - **poke_interval** : 60 seconds by default. every 60 seconds the sensor checks if the condition is true or not before executing the next task.
 - timeout :7 days by default. always define the timeout for your sensor and obviously it tells in seconds when your sensor times out and fails.
-- ![img_22.png](img_22.png)
+- ![img_22.png](img/img_22.png)
 - It means that every 60 seconds it box it verifies if that URL is valid or not. They wait for something to happen before executing the next task.
 
 # 34. Is the API available?
@@ -239,9 +239,9 @@ with DAG(
     schedule_interval="@daily",
     catchup=False) as dag:
 ```
-- ![alt text](image.png)
-- ![alt text](image-1.png)
-- ![alt text](image-2.png)
+- ![alt text](img/image.png)
+- ![alt text](img/image-1.png)
+- ![alt text](img/image-2.png)
 
 # 44. Backfilling: How does it work?
 - 

@@ -64,7 +64,8 @@ In summary, when using Docker Compose, **modify Airflow settings like the execut
 -
 
 # 57. The Local Executor
-- ![alt text](image-12.png)
+- ![alt text](img/image-12.png)
+
 The **Local Executor** in Airflow is more advanced than the Sequential Executor because it allows the execution of multiple tasks simultaneously, but still on a single machine. 
 
 Key points:
@@ -78,8 +79,8 @@ Key points:
 In summary, the Local Executor enables parallel task execution but is constrained by the hardware of a single machine.
 
 # 58. The Celery Executor
-- ![alt text](image-13.png)
-- ![alt text](image-14.png)
+- ![alt text](img/image-13.png)
+- ![alt text](img/image-14.png)
 The **Celery Executor** in Airflow is a more advanced option that allows you to scale out the number of tasks you can execute simultaneously by using a **Celery cluster**. Here’s how it works:
 
 1. **Components**: You still have the core components—web server, scheduler, and metadata database (e.g., PostgreSQL)—but Celery adds extra parts.
@@ -172,18 +173,18 @@ To do this
 5. Once it's done, go back to localhost:8080 and you should end up with something like this
 
 # 63. Running tasks on Celery Workers
-![alt text](image-15.png)
+![alt text](img/image-15.png)
 1. save the work
-![alt text](image-16.png)
+![alt text](img/image-16.png)
 2. trigger DAG
-![alt text](image-17.png)
+![alt text](img/image-17.png)
 3. check flower and check if thre is failed one or not
-![alt text](image-18.png)
+![alt text](img/image-18.png)
 4. check which worker run for this job.
 
 
 # 64. What is a queue?
-![alt text](image-19.png)
+![alt text](img/image-19.png)
 The concept of a "queue" in computing and specifically in systems like **Apache Airflow** can be understood similarly to a real-world line, where tasks wait in an organized order to be executed.
 
 ### How a Queue Works:
@@ -211,7 +212,7 @@ The concept of a "queue" in computing and specifically in systems like **Apache 
 
 3. **Default Queue**:
    - Any task that doesn't have special resource requirements can go into a **default queue** and will be executed by a worker with fewer resources.
-![alt text](image-20.png)
+![alt text](img/image-20.png)
 ### Benefits:
 - **Efficient Resource Management**: By using queues, Airflow can balance tasks across different machines based on what they need. This ensures that:
   - Tasks that need a lot of resources (like CPU or GPU) go to the right worker.
@@ -241,15 +242,15 @@ Before creating a queue, you need to add a new Celery worker to simulate multipl
 4. **Check Flower**:
    - Open Flower, the monitoring tool, and verify that both workers are visible.
    - This confirms you've successfully added a new worker, allowing you to execute more tasks.
-![alt text](image-21.png)
-![alt text](image-22.png)
+![alt text](img/image-21.png)
+![alt text](img/image-22.png)
 
 In a real-world scenario with multiple physical machines, you'd run a specific command on each machine to register it as a worker, enabling it to execute tasks.
 
 # 66. Create a queue to better distribute tasks
 Creating a queue in Airflow is straightforward. You can specify a queue by adding an option to the Celery worker command.
 
-![alt text](image-23.png)
+![alt text](img/image-23.png)
 
 ### Steps to Create a Queue:
 1. **Specify Queue in Worker Command**:
@@ -270,7 +271,7 @@ Creating a queue in Airflow is straightforward. You can specify a queue by addin
 
 Now you have one worker executing tasks from the default queue and another worker handling tasks in the high CPU queue.
 
-![alt text](image-24.png)
+![alt text](img/image-24.png)
 
 ### Next Step: Defining Task Queues
 To specify which queue a particular task should be sent to, you will need to define the task's queue in your DAG (Directed Acyclic Graph) configuration. Let's look into that next.
@@ -314,7 +315,7 @@ You've successfully:
 
 This is especially useful when you have tasks that require more resources and need to be processed by more powerful workers.
 
-![alt text](image-25.png)
+![alt text](img/image-25.png)
 
 # 68. Concurrency, the parameters you must know!
 

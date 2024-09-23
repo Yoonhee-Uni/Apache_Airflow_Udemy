@@ -1,25 +1,25 @@
 # 46. Why do you need that feature?
 
-- ![alt text](image-3.png)
+- ![alt text](img/image-3.png)
 - Intead of triggering TA TB after T1 T2 T3, make middle point file(updates) and that triggers next TA TB TC.
-- ![alt text](image-4.png)
+- ![alt text](img/image-4.png)
 - you can create micro pipelines. Basically you divide that big data pipeline into many smaller data pipelines where each one is dedicated to a given team with a given file and those micro pipelines, they are dependent to each other.
 
 # 47. What is a Dataset?
 
-- ![alt text](image-5.png)
+- ![alt text](img/image-5.png)
 - URI : Unique identifier of your data, path to your data.
   - ig. S3 bucket : s3://folder/filename , Local file : /user/airflow/something
 - Must composed of only ASCII characters
 - The URI scheme cannot be airflow
 - Case sensitive
-- ![alt text](image-6.png)
+- ![alt text](img/image-6.png)
 - if you have extra parameter?
-- ![alt text](image-7.png)
+- ![alt text](img/image-7.png)
 
 # 48. Adios schedule_interval!
 
-- ![alt text](image-8.png)
+- ![alt text](img/image-8.png)
 - That being said, you had those two parameters scale, interval and timetable. Now they are all gone. You have only one parameter which is schedule.
 
 # 49. Create the Producer DAG
@@ -152,7 +152,7 @@ with DAG(
 
 Now that you have a **Producer DAG** that updates the dataset, you can create a **Consumer DAG** that depends on this dataset. This **Consumer DAG** will be automatically triggered once the **Producer DAG** successfully completes.
 
-![alt text](image-9.png)
+![alt text](img/image-9.png)
 
 In the previous video, we created a **Producer DAG** that is responsible for updating a dataset, which will trigger the **Consumer DAG** that we are about to create. Here's how to set up the **Consumer DAG**:
 
@@ -229,13 +229,13 @@ With this setup, the **Consumer DAG** will be automatically triggered whenever t
 
 
 # 51. Track your Datasets with the new view!
-- ![alt text](image-10.png)
+- ![alt text](img/image-10.png)
 - know that these data set triggers to consume a DAG. So look at this view.
 You will get the list of all datasets you have and a nice visualization of what dogs update, what data sets that trigger what also tags.
 
 
 # 52. Wait for many datasets
-- ![alt text](image-11.png)
+- ![alt text](img/image-11.png)
 If you want to wait for updates from two datasets instead of just one, it's quite simple. Here’s how to do it:
 
 ### 1. **Modify the Producer DAG**

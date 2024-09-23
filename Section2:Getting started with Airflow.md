@@ -19,8 +19,8 @@ as your projects grow and customize workflows to fit with your specific needs.
 - Airflow is an open source platform to **programmatically author, schedule, and monitor** workflows.
 - Airflow is a tool that helps you create, organize, and keep track of your data tasks
 automatically. It's like a **smart to do list** for your data work that runs itself.
-- ![img.png](img.png)
-- ![img_1.png](img_1.png)
+- ![img.png](img/img.png)
+- ![img_1.png](img/img_1.png)
 
 # 7. Core Components
 - **Component 1 The Web Server** : THe web server provides the user interface(IU) you see when you use Airflow. it allows you to view, manage and monitor your workflows through a web browser.
@@ -33,12 +33,12 @@ automatically. It's like a **smart to do list** for your data work that runs its
 
 # 8. Core Concepts
 - Concept 1 The DAG(Directed Acyclic Graph) : A DAG is collection of all the tasks you want to run, organized in a way that reflects their dependencies. It helps you define the structure of your entire workflow, showing which tasks need to happen before others.
-- ![img_2.png](img_2.png)
+- ![img_2.png](img/img_2.png)
 - Concept 2 Operator : An operator defines a single, ideally idempotent, task in your DAG. Operators allow you to break down your workflow into discrete, manageable pieces of work.
-- ![img_3.png](img_3.png)
+- ![img_3.png](img/img_3.png)
 - Concept 3 Task / Task instance : A task is a sepcific instance of an operator. When an operator is assigned to a DAG, it becomes a task.Tasks are the actual units of work that get executed when your DAG runs.
 - Concept 4 Workflow: A workflow is the entire process defined by your DAG, including all tasks and their dependencies. It represents your entire data pipeline showing how all the pieces fit together to achieve your goal.
-- ![img_4.png](img_4.png)
+- ![img_4.png](img/img_4.png)
 
 # 9. Airflow is not...
 - Airflow is not designed to process large volumes of data itself. It's an orchestrator, not a data processing engine.
@@ -52,12 +52,12 @@ automatically. It's like a **smart to do list** for your data work that runs its
 - The power of airflow comes from managing complex dependencies and parallelism for very simple workflows.
 # 10. The Different Architectures
 - **Single node architecture** :single node architecture means all components of airflow are running on one machine.
-- ![img_5.png](img_5.png)
+- ![img_5.png](img/img_5.png)
  **Now you may wonder how do they communicate between each other?**
   - They all communicate using the Metadatabase.
 -  **multi-node  architecture** : Multi-node refers to running airflow across multiple computers or servers rather than just one.
-- ![img_6.png](img_6.png)
-- ![img_7.png](img_7.png)
+- ![img_6.png](img/img_6.png)
+- ![img_7.png](img/img_7.png)
 
 # 11. How does it work?
 1. (red) You write your Dag file, let's call it Daily Report Magpie and place it in the DAGs folder.
@@ -73,7 +73,7 @@ automatically. It's like a **smart to do list** for your data work that runs its
   - consistency : A docker container works the same on any computer that can run Docker.
   - isolation : Each Docker container is isolated from others.
   - efficiency : Docker containers are lightweight. They share resources with the host computer more efficiently than traditional methods.
-  - ![img_8.png](img_8.png)
+  - ![img_8.png](img/img_8.png)
   - **In a sense, Docker is like a universal packaging system for software It ensures that your application, along with everything it needs to run, is bundled up neatly and can be run anywhere, anytime, exactly as we intended.**
 
 # Key Takeaways
