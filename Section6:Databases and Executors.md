@@ -233,7 +233,7 @@ Before creating a queue, you need to add a new Celery worker to simulate multipl
    - Save the file.
 
 2. **Restart Airflow**:
-   - Run the command to restart the Airflow instance and wait for it to become operational.
+   - Run the command to restart the Airflow instance and wait for it to become operational.ㅣ
 
 3. **Verify the Workers**:
    - Use the command to check your running Docker containers. You should now see two workers (`airflow-worker-1` and `airflow-worker-2`).
